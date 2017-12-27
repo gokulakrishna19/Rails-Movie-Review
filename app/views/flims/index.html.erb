@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Flims</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Movie length</th>
+      <th>Director</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @flims.each do |flim| %>
+      <tr>
+        <td><%= flim.title %></td>
+        <td><%= flim.description %></td>
+        <td><%= flim.movie_length %></td>
+        <td><%= flim.director %></td>
+        <td><%= flim.rating %></td>
+        <td><%= link_to 'Show', flim %></td>
+        <td><%= link_to 'Edit', edit_flim_path(flim) %></td>
+        <td><%= link_to 'Destroy', flim, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Flim', new_flim_path %>

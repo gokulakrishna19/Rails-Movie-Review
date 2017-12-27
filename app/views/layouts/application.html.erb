@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Review</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <%= csrf_meta_tags %>
+    
+  </head>
+
+  <body class="body">
+
+  	 <nav class="navbar navbar-default">
+     
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand logo" href="/">Movie Review
+          </a>
+        </div>
+         <% unless current_user.nil? %>
+        <ul class="nav navbar-nav navbar-left">
+	        <li><%= link_to "New Movie", new_movie_path, class: "active" %></li>
+	        <li><%= link_to "Account", edit_user_registration_path %></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/users/sign_out"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li> 
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+        	
+        	<div class="form-group">
+        		<input type="text" name="search" class="form-control" placeholder="search">
+
+        	</div>
+        	<button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+      <% else %>
+      
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            
+            <a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+           
+            <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+            
+          
+          
+            
+            
+          
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <input type="text" name="search" class="form-control" placeholder="search">
+
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+      <% end %>
+
+    </nav>
+    <div class="container">
+      <% flash.each do|name, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-info")%>
+      <% end %>
+      <%= yield %>
+    </div>
+    
+  </body>
+</html>

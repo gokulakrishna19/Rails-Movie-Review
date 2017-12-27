@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @flim.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @flim.description %>
+</p>
+
+<p>
+  <strong>Movie length:</strong>
+  <%= @flim.movie_length %>
+</p>
+
+<p>
+  <strong>Director:</strong>
+  <%= @flim.director %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @flim.rating %>
+</p>
+
+<%= link_to 'Edit', edit_flim_path(@flim) %> |
+<%= link_to 'Back', flims_path %>
