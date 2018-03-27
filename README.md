@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The movie review system gives the admin to add the ability of new movies. The user can register in the system and user can see the rating and review of the movie. The user can login to rate the movie. In this project many gems are used like devise etc.
 
-Things you may want to cover:
+APPROACH:
+    All the movie which is released are updated by the admin. The normal user can register and login to the account for giving rating and review. The user can view the rating of all the movie. Flexible search is available to the user.
+    
+TECHNOLOGY USED:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  RAILS is the language used to create the backend of the project.
+  
+  RUBY ON RAILS is the framework used to develop the project.
+  
+  MYSQL is the database used, But the creation and updation done using framework model.
+  
+  HTML, CSS, BOOTSTRAP are used for frontend.
